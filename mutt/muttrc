@@ -15,7 +15,7 @@ set editor="vim"
 set mailcap_path=~/.mutt/mailcap
 
 # Headers
-ignore *                                    
+ignore *
 unignore from date subject to cc
 hdr_order From: Subject: Date: To: Cc:
 
