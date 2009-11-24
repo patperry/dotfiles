@@ -1,0 +1,25 @@
+[user]
+	name  = Patrick Perry
+	email = patperry@gmail.com
+	
+[diff]
+	color  = auto
+	rename = copy
+	
+[pager]
+	color = true
+	
+[status]
+	color = auto
+
+[branch]
+	color = auto
+
+[interactive]
+	color = auto
+
+[merge]
+	tool = opendiff
+	summary = true
+[core]
+	excludesfile = /Users/patperry/.gitignore

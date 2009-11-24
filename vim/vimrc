@@ -1,0 +1,46 @@
+" Color
+colorscheme ir_black
+
+" Indenting
+set noexpandtab                  " use tabs, not spaces
+set tabstop=8                    " tabstops of 8
+set shiftwidth=8                 " indents of 8
+set textwidth=78                 " screen in 80 columns wide, wrap at 78
+set autoindent smartindent       " turn on auto/smart indenting
+set smarttab                     " make <tab> and <backspace> smarter
+set backspace=eol,start,indent   " allow backspacing over indent, eol, & start
+filetype plugin indent on        " indent code differently based on file type
+
+" Highlighting
+syntax on
+autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
+autocmd Syntax * syn match Error80         /\%>80v.\+/ 
+
+" Spell-check
+setlocal spell spelllang=en_us
+
+augroup filetypedetect
+au BufNewFile,BufRead *.R        setf R
+au BufNewFile,BufRead *.mk       setf markdown
+au BufNewFile,BufRead *.markdown setf markdown
+augroup END
+
+" C formatting (from Linux kernel style guide)
+set formatoptions=tcqlron
+set cinoptions=:0,l1,t0,g0
+
+" latex-vim settings
+" ------------------
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+" Use Preview as the default viewer
+let g:Tex_ViewRule_pdf = 'Preview'

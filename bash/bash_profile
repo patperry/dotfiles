@@ -1,0 +1,30 @@
+
+export PATH=$HOME/bin:$HOME/Library/Cabal/bin:$PATH
+export MANPATH=$HOME/share/man:$MANPATH
+export R_LIBS_USER=$HOME/Library/R
+
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
+
+if [ -f ~/.bash/git-completion.bash ]; then
+	source ~/.bash/git-completion.bash
+	PS1='\h:\w$(__git_ps1 " (%s)")\$ '
+else
+	PS1='\h:\w\$ '
+fi
+
+alias ls="ls -F"
+
+# emulate locate with Spotlight's mdfind
+if [ -x /usr/bin/mdfind ]; then
+	locate()
+	{
+		/usr/bin/mdfind "kMDItemFSName = '*$@*'"
+	}
+fi
+
+# link GSL with Accelerate instead of GSL CBLAS
+if [ -d /System/Library/Frameworks/Accelerate.framework ]; then
+	export GSL_CBLAS_LIB="-framework Accelerate"
+fi

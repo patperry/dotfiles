@@ -1,0 +1,5 @@
+set imap_user = "patperry@gmail.com"
+set imap_pass = ""
+set folder    = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"

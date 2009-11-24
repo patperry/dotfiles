@@ -1,0 +1,51 @@
+
+# User information
+set realname = "Patrick Perry"
+alternates     "^patperry*"
+
+# Pager
+set sort     = "threads"
+set sort_aux = "last-date-received"
+set mark_old = no
+
+# Editor
+set editor="vim"
+
+# Mailcap
+set mailcap_path=~/.mutt/mailcap
+
+# Headers
+ignore *                                    
+unignore from date subject to cc
+hdr_order From: Subject: Date: To: Cc:
+
+# IMAP
+source ~/.mutt/imap
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+bind index "G" imap-fetch-mail
+
+# Address book
+set query_command="/usr/local/bin/lbdbq '%s'"
+
+# Drafts
+# set postponed = "=/Drafts" # we use Gmail's drafts folder instead
+
+# Sending
+set use_from = yes
+set copy     = yes
+set record   = "=[Gmail]/Sent Mail"
+
+# SMTP
+source ~/.mutt/smtp
+
+
+# Deleting
+# set trash  = "=/Deleted Messages" # don't store deleted messages
+
+# Forwarding
+set forward_format = "Fwd: %s"
+
+# Authentication
+set certificate_file=~/.mutt/certificates
+

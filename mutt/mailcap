@@ -1,0 +1,24 @@
+# ~/.mutt/mailcap
+#
+# this uses the view_attachment script found in ~/.mutt/view_attachment.sh
+#
+# this is meant for an OS X system
+
+# MS Word
+# use Pages to open .doc files as it's more light-weight
+application/msword; /Users/patperry/.mutt/view_attachment.sh %s "-" '/Applications/Pages.app'
+
+# Images
+image/jpeg; /Users/patperry/.mutt/view_attachment.sh %s jpeg
+image/pjpeg; /Users/patperry/.mutt/view_attachment.sh %s
+image/png; /Users/patperry/.mutt/view_attachment.sh %s
+image/gif; /Users/patperry/.mutt/view_attachment.sh %s
+
+# PDF
+application/pdf; /Users/patperry/.mutt/view_attachment.sh %s pdf
+
+# HTML
+text/html; elinks -force-html %s
+
+# Unidentified.
+application/octet-stream; /Users/patperry/.mutt/view_attachment.sh %s "-" 
