@@ -1,0 +1,7 @@
+compiler: GHC
+repos: hackage.haskell.org:http://hackage.haskell.org/packages/archive
+user-install: true
+library-profiling: true
+documentation: true
+hackage-username: "PatrickPerry"
+hackage-password: ""

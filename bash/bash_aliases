@@ -1,0 +1,14 @@
+
+alias ls="ls -F"
+
+# Make grep more user friendly by highlighting matches
+# and exclude grepping through .svn folders.
+alias grep='grep --color=auto --exclude-dir=\.git'
+
+# emulate locate with Spotlight's mdfind
+if [ -x /usr/bin/mdfind ]; then
+	locate()
+	{
+		/usr/bin/mdfind "kMDItemFSName = '*$@*'"
+	}
+fi

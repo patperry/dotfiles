@@ -1,0 +1,2 @@
+PATH=$HOME/bin:$HOME/.cabal/bin:$PATH
+MANPATH=$HOME/share/man:$MANPATH

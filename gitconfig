@@ -22,4 +22,5 @@
 	tool = opendiff
 	summary = true
 [core]
-	excludesfile = /Users/patperry/.gitignore
+	autocrlf = input
+	excludesfile = ~/.gitignore
