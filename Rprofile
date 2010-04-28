@@ -1,1 +1,0 @@
-.libPaths("~/Library/R")
