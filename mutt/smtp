@@ -1,9 +1,0 @@
-
-set from=patperry@seas.harvard.edu
-set smtp_url=smtp://patperry:PASSWORD@smtp.seas.harvard.edu
-set copy=yes
-
-macro compose \e1 "<edit-from><home>(<enter><edit-from>Patrick Perry <patperry@gmail.com><enter>:macro compose x \\e2<enter>:set smtp_url=smtp://patperry:PASSWORD@smtp.gmail.com<enter>:set copy=no<enter>"
-macro compose \e2 "<edit-from><home>(<enter><edit-from>Patrick Perry <patperry@seas.harvard.edu><enter>:macro compose x \\e1<enter>:set smtp_url=smtp://patperry:PASSWORD@smtp.seas.harvard.edu<enter>:set copy=yes<enter>"
-macro compose x \e1 "toggle From\: header"
-
