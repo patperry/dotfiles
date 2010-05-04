@@ -1,5 +1,5 @@
 # Enable programmable completion features.
-if [ -f `brew --prefix`/etc/bash_completion ]; then
+if which brew && [ -f `brew --prefix`/etc/bash_completion ]; then
 	source `brew --prefix`/etc/bash_completion
 elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion
@@ -8,38 +8,30 @@ fi
 # Set the PS1 prompt (with colors).
 # Based on http://www-128.ibm.com/developerworks/linux/library/l-tip-prompt/
 # And http://networking.ringofsaturn.com/Unix/Bash-prompts.php .
-if [[ `type -t __git_ps1` -eq "function" ]]; then
+if type __git_ps1 >/dev/null 2>&1; then
 	PS1='\[\e[36;1m\]\h:\[\e[32;1m\]\w\[\e[31;1m\]$(__git_ps1 " (%s)")\[\e[36;1m\]\$ \[\e[0m\]'
 else
 	PS1="\[\e[36;1m\]\h:\[\e[32;1m\]\w$ \[\e[0m\]"
 fi
- 
- #if [ -f ~/.bash/git-completion.bash ]; then
- #	source ~/.bash/git-completion.bash
- #	PS1='\h:\w$(__git_ps1 " (%s)")\$ '
- #else
- #	PS1='\h:\w\$ '
- #fi
- 
- 
+
 # Set the default editor to Textmate or vim.
 if [ -x /usr/local/bin/mate ]; then
 	export EDITOR=mate
 else
 	export EDITOR=vim
 fi
- 
+
 # Avoid succesive duplicates in the bash command history.
 export HISTCONTROL=ignoredups
- 
+
 # Append commands to the bash command history file (~/.bash_history)
 # instead of overwriting it.
 shopt -s histappend
- 
+
 # Append commands to the history every time a prompt is shown,
 # instead of after closing the session.
 PROMPT_COMMAND='history -a'
- 
+
 # Link GSL with Accelerate instead of GSL CBLAS
 if [ -d /System/Library/Frameworks/Accelerate.framework ]; then
 	export GSL_CBLAS_LIB="-framework Accelerate"
