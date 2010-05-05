@@ -1,5 +1,5 @@
 # Enable programmable completion features.
-if which brew && [ -f `brew --prefix`/etc/bash_completion ]; then
+if which -s brew && [ -f `brew --prefix`/etc/bash_completion ]; then
 	source `brew --prefix`/etc/bash_completion
 elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion
