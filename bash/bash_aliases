@@ -2,8 +2,8 @@
 alias ls="ls -F"
 
 # Make grep more user friendly by highlighting matches
-# and exclude grepping through .svn folders.
-alias grep='grep --color=auto --exclude-dir=\.git'
+# and exclude grepping through .git folders.
+alias grep='grep --color=auto --exclude=\.git'
 
 # emulate locate with Spotlight's mdfind
 if [ -x /usr/bin/mdfind ]; then
