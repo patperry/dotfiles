@@ -1,6 +1,7 @@
 #!/bin/sh
 
-pushd $HOME
+pushd $HOME >/dev/null
+
 rm -rf .bash         && ln -s .dotfiles/bash      .bash
 rm -f  .bash_aliases && ln -s .bash/bash_aliases  .bash_aliases
 rm -f  .bash_profile && ln -s .bash/bash_profile  .bash_profile
@@ -13,13 +14,14 @@ rm -f  .vimrc        && ln -s .vim/vimrc          .vimrc
 
 rm -rf .cabal
 rm -f  .profile
+mkdir .cabal
 if [[ `expr "$OSTYPE" : 'darwin'` ]]; then
-	ln -s .dotfiles/cabal.darwin     .cabal
-	ln -s .dotfiles/profile.darwin   .profile
+    ln -s ../.dotfiles/cabal/config.darwin      .cabal/config
+    ln -s .dotfiles/profile.darwin              .profile
 else
-	ln -s .dotfiles/cabal.default     .cabal
-	ln -s .dotfiles/profile.default   .profile
+	ln -s ../.dotfiles/cabal/config.default     .cabal/config
+	ln -s .dotfiles/profile.default             .profile
 fi
 
-popd
+popd >/dev/null
 
