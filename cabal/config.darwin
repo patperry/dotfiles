@@ -58,7 +58,7 @@ install-dirs user
 
 install-dirs global
   prefix: /Library/Cabal
-  bindir: /usr/local/bin
+  -- bindir: $prefix/bin
   -- libdir: $prefix/lib
   -- libsubdir: $pkgid/$compiler
   -- libexecdir: $prefix/libexec
