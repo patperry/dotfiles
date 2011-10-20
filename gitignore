@@ -1,9 +1,12 @@
 # Compiled source #
 ###################
+.deps
+.dirstamp
 *.com
 *.class
 *.dll
 *.exe
+*.lo
 *.o
 *.so
 *.hi
