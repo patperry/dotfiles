@@ -1,6 +1,6 @@
 " Color
 set background=dark
-colorscheme ir_black
+colorscheme zenburn
 
 " Indenting
 set noexpandtab                  " use tabs, not spaces

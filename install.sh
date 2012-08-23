@@ -13,14 +13,11 @@ rm -rf .vim          && ln -s .dotfiles/vim       .vim
 rm -f  .vimrc        && ln -s .vim/vimrc          .vimrc
 
 rm -rf .cabal
-rm -f  .profile
 mkdir .cabal
 if [[ `expr "$OSTYPE" : 'darwin'` ]]; then
     ln -s ../.dotfiles/cabal/config.darwin      .cabal/config
-    ln -s .dotfiles/profile.darwin              .profile
 else
 	ln -s ../.dotfiles/cabal/config.default     .cabal/config
-	ln -s .dotfiles/profile.default             .profile
 fi
 
 popd >/dev/null

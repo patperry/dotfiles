@@ -1,16 +1,17 @@
 # Compiled source #
 ###################
+.deps
+.dirstamp
+*.a
 *.com
 *.class
 *.dll
 *.exe
-*.a
-*.o
-*.lo
-*.so
 *.hi
-.deps
-.dirstamp
+*.lo
+*.lo
+*.o
+*.so
 
 # Packages #
 ############
