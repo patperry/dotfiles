@@ -1,32 +1,74 @@
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
 " Color
 set background=dark
 colorscheme zenburn
 
-" Indenting
-set noexpandtab                  " use tabs, not spaces
-set tabstop=8                    " tabstops of 8
-set shiftwidth=8                 " indents of 8
+" Linebreak/Indent
+set expandtab                    " spaces, not tabs
+set tabstop=4                    " tabstops of 4
+set shiftwidth=4                 " indents of 4
 set textwidth=78                 " screen in 80 columns wide, wrap at 78
-set autoindent smartindent       " turn on auto/smart indenting
-set smarttab                     " make <tab> and <backspace> smarter
-set backspace=eol,start,indent   " allow backspacing over indent, eol, & start
-filetype plugin indent on        " indent code differently based on file type
+set backspace=indent,eol,start   " allow backspacing over indent, eol, & start
 
 " Highlighting
-syntax on
-autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
-autocmd Syntax * syn match Error80         /\%>80v.\+/ 
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  " Also don't do it when the mark is in the first line, that is the default
+  " position when opening a file.
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+  augroup END
+
+  autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
+  autocmd Syntax * syn match Error80         /\%>80v.\+/ 
+
+else
+
+  set autoindent		" always set autoindenting on
+
+endif " has("autocmd")
+
+
+ 
 
 " Spell-check
 setlocal spell spelllang=en_us
 
-augroup filetypedetect
-au BufNewFile,BufRead *.R        setf R
-au BufNewFile,BufRead *.mk       setf markdown
-au BufNewFile,BufRead *.markdown setf markdown
-augroup END
+" augroup filetypedetect
+" au BufNewFile,BufRead *.R        setf R
+" au BufNewFile,BufRead *.mk       setf markdown
+" au BufNewFile,BufRead *.markdown setf markdown
+" augroup END
 
-" C formatting (from Linux kernel style guide)
-set formatoptions=tcqlron
-set cinoptions=:0,l1,t0,g0
+set visualbell  " no annoying beeps
 
