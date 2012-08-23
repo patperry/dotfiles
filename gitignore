@@ -4,9 +4,13 @@
 *.class
 *.dll
 *.exe
+*.a
 *.o
+*.lo
 *.so
 *.hi
+.deps
+.dirstamp
 
 # Packages #
 ############
@@ -27,9 +31,17 @@
 # *.sql
 # *.sqlite
 
+# Vim #
+#######
+.*.sw[a-z]
+*.un~
+*~
+Session.vim
+
 # OS generated files #
 ######################
 .DS_Store
 ehthumbs.db
 Icon?
 Thumbs.db
+a.out.dSYM
