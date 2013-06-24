@@ -24,3 +24,5 @@
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore
+[push]
+	default = simple
