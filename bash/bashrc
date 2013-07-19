@@ -45,5 +45,8 @@ fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+# For python nltk
+export NLTK_DATA=$HOME/Datasets/nltk_data
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
