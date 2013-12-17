@@ -4,7 +4,14 @@ set nocompatible
 
 " Color
 set background=dark
-colorscheme zenburn
+" colorscheme zenburn
+color blackboard
+
+" Font
+if has("gui_running")
+  set guifont=Monaco:h12
+endif
+
 
 " Linebreak/Indent
 set expandtab                    " spaces, not tabs
