@@ -1,6 +1,11 @@
 # Enable programmable completion features.
-if which -s brew && [ -f `brew --prefix`/etc/bash_completion ]; then
-	source `brew --prefix`/etc/bash_completion
+if which -s brew; then
+    if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+	    source `brew --prefix`/etc/bash_completion.d/git-completion.bash
+    fi
+    if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
+	    source `brew --prefix`/etc/bash_completion.d/git-prompt.sh
+    fi
 elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion
 fi
@@ -48,10 +53,16 @@ if [ -f ~/.bash_aliases ]; then
 	source ~/.bash_aliases
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# RVM
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+    source "$HOME/.rvm/scripts/rvm"
+fi
+
+# Cabal
+PATH="$HOME/.cabal/bin:/Library/Cabal/bin:$PATH" # cabal-installed binaries
 
 # For python nltk
 export NLTK_DATA=$HOME/Datasets/nltk_data
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+PATH="/usr/local/heroku/bin:$PATH"
