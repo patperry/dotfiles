@@ -64,5 +64,7 @@ PATH="$HOME/.cabal/bin:/Library/Cabal/bin:$PATH" # cabal-installed binaries
 # For python nltk
 export NLTK_DATA=$HOME/Datasets/nltk_data
 
-### Added by the Heroku Toolbelt
-PATH="/usr/local/heroku/bin:$PATH"
+### Heroku Toolbelt
+if [ -d /usr/local/heroku/bin ]; then
+    PATH="/usr/local/heroku/bin:$PATH"
+fi
