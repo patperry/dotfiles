@@ -3,9 +3,8 @@
 set nocompatible
 
 " Color
-set background=dark
-" colorscheme zenburn
-color blackboard
+" set background=dark
+colorscheme delek
 
 " Font
 if has("gui_running")
