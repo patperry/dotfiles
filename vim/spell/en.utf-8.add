@@ -1,5 +1,8 @@
 analyses
+estimands
 frequentist
+infimum
+invertibility
 genomics
 homophily
 manurial
@@ -9,4 +12,4 @@ reparametrize
 reweighted
 scatterplots
 supremum
-invertibility
+preimage
