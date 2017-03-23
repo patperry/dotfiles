@@ -9,7 +9,7 @@
 
 
 remote-repo: hackage.haskell.org:http://hackage.haskell.org/packages/archive
-remote-repo-cache: /Users/patperry/Library/Caches/Cabal
+remote-repo-cache: /Users/ptrck/Library/Caches/Cabal
 -- local-repo:
 -- verbose: 1
 -- compiler: ghc
@@ -38,14 +38,14 @@ documentation: True
 -- doc-index-file: $datadir/doc/index.html
 -- root-cmd:
 -- symlink-bindir:
-build-summary: /Users/patperry/Library/Logs/Cabal.log
+build-summary: /Users/ptrck/Library/Logs/Cabal.log
 -- build-log:
 remote-build-reporting: anonymous
 username: "PatrickPerry"
 -- password:
 
 install-dirs user
-  prefix: /Users/patperry/Library/Cabal
+  prefix: /Users/ptrck/Library/Cabal
   -- bindir: $prefix/bin
   -- libdir: $prefix/lib
   -- libsubdir: $pkgid/$compiler
