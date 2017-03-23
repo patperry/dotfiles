@@ -43,11 +43,6 @@ if [ -d /System/Library/Frameworks/Accelerate.framework ]; then
 	export GSL_CBLAS_LIB="-framework Accelerate"
 fi
 
-# NLTK data is in non-standard directory
-if [ -d /usr/local/share/nltk_data ]; then
-    export NLTK_DATA="/usr/local/share/nltk_data"
-fi
-
 # Add bash aliases.
 if [ -f ~/.bash_aliases ]; then
 	source ~/.bash_aliases
@@ -60,9 +55,6 @@ fi
 
 # Cabal
 PATH="$HOME/.cabal/bin:/Library/Cabal/bin:$PATH" # cabal-installed binaries
-
-# For python nltk
-export NLTK_DATA=$HOME/Datasets/nltk_data
 
 ### Heroku Toolbelt
 if [ -d /usr/local/heroku/bin ]; then
