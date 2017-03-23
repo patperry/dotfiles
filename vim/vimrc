@@ -3,8 +3,8 @@
 set nocompatible
 
 " Color
-" set background=dark
-colorscheme delek
+" colorscheme delek
+colorscheme blackboard
 
 " Font
 if has("gui_running")
