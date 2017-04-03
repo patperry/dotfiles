@@ -1,13 +1,10 @@
 # Enable programmable completion features.
 if which -s brew; then
-    if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
-	    source `brew --prefix`/etc/bash_completion.d/git-completion.bash
-    fi
-    if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
-	    source `brew --prefix`/etc/bash_completion.d/git-prompt.sh
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
     fi
 elif [ -f /etc/bash_completion ]; then
-	source /etc/bash_completion
+	. /etc/bash_completion
 fi
 
 # Set the PS1 prompt (with colors).
