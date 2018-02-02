@@ -3,8 +3,7 @@
 set nocompatible
 
 " Color
-" colorscheme delek
-colorscheme blackboard
+colorscheme default
 
 " Font
 if has("gui_running")
@@ -65,17 +64,8 @@ else
 
 endif " has("autocmd")
 
-
- 
-
 " Spell-check
 setlocal spell spelllang=en_us
 
-" augroup filetypedetect
-" au BufNewFile,BufRead *.R        setf R
-" au BufNewFile,BufRead *.mk       setf markdown
-" au BufNewFile,BufRead *.markdown setf markdown
-" augroup END
-
-set visualbell  " no annoying beeps
-
+" No annoying beeps
+set visualbell

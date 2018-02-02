@@ -22,8 +22,6 @@ if [ -x /usr/local/bin/mvim ]; then
     VISUAL='mvim -f'
 fi
 
-
-
 # Avoid succesive duplicates in the bash command history.
 export HISTCONTROL=ignoredups
 
@@ -45,15 +43,7 @@ if [ -f ~/.bash_aliases ]; then
 	source ~/.bash_aliases
 fi
 
-# RVM
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-    source "$HOME/.rvm/scripts/rvm"
-fi
-
 # Cabal
-PATH="$HOME/.cabal/bin:/Library/Cabal/bin:$PATH" # cabal-installed binaries
-
-### Heroku Toolbelt
-if [ -d /usr/local/heroku/bin ]; then
-    PATH="/usr/local/heroku/bin:$PATH"
+if [[ -d "$HOME/.cabal/bin" ]]; then
+    PATH="$HOME/.cabal/bin:$PATH" # cabal-installed binaries
 fi

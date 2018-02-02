@@ -26,7 +26,7 @@ library-profiling: True
 -- library-for-ghci: True
 -- split-objs: False
 -- executable-stripping: True
-user-install: False
+user-install: True
 -- package-db:
 -- flags:
 -- extra-include-dirs:
